@@ -1,23 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-[RequireComponent(typeof(CharacterController))]
+//[RequireComponent(typeof(CharacterController))]
 public class PlayerManager : MonoBehaviour
-{
+{ CharacterController characterController;
     public float walkspeed;
-    private bool limitDiagonalSpeed = true;
     public float Jumpspeed;
-    public float grevity;
-    public bool Aircontrol = true;
-    // Start is called before the first frame update
+    public float gravity;
+    public float speed;
+    private Vector3 moveDirection = Vector3.zero;
+
     void Start()
     {
-        
-    }
+        characterController = GetComponent<CharacterController>();
 
-    // Update is called once per frame
-    void Update()
+    }
+    private void Update()
     {
-        
+        if (characterController.isGrounded)
+        {
+            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection *= speed;
+
+            if (Input.GetButton("Jump"))
+            {
+                moveDirection.y = Jumpspeed;
+            }
+        }
+
+        moveDirection.y -= gravity * Time.deltaTime;
+        characterController.Move(moveDirection * Time.deltaTime);
     }
 }

@@ -16,6 +16,7 @@ public class DamageZone : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Death");
             SceneManager.LoadScene(1);
         }
     }
