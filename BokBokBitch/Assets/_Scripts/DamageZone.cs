@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class DamageZone : MonoBehaviour
 {
-    private Scene scene;
+    //private Scene scene;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        scene = SceneManager.GetActiveScene();
-    }
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    scene = SceneManager.GetActiveScene();
+    //}
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

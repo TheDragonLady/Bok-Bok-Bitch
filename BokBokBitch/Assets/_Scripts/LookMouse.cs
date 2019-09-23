@@ -10,7 +10,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MouseLook : MonoBehaviour
+public class LookMouse : MonoBehaviour
 {
  
 	public enum RotationAxes { MouseX = 1, MouseY = 2 }
