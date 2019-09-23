@@ -21,9 +21,16 @@ public class Knifechop : MonoBehaviour
       
         transform.localEulerAngles = new Vector3(Mathf.PingPong(Time.time * 100, Rotknife),yrot,(gameObject.transform.localRotation.z));
     }
-    private void OnCollisionEnter(Collision collision)
+  //  private void OnCollisionEnter(Collision collision)
+   // {
+   //     if (collision.gameObject.tag == "Player")
+   //     {
+  //          SceneManager.LoadScene(1);
+  //      }
+ //   }
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(1);
         }

@@ -19,7 +19,10 @@ public class PlayerManager : MonoBehaviour
     {
         if (characterController.isGrounded)
         {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+            moveDirection = transform.forward * (Input.GetAxis("Vertical"));
+            moveDirection += transform.right * (Input.GetAxis("Horizontal"));
+
+            //moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
             if (Input.GetButton("Jump"))
