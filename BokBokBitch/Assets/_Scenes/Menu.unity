@@ -1003,7 +1003,7 @@ MonoBehaviour:
 
 
 
-    Jumb [Space]'
+    Jump [Space]'
 --- !u!222 &1777289781
 CanvasRenderer:
   m_ObjectHideFlags: 0
